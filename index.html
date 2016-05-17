@@ -8,7 +8,7 @@
   </head>
   <body ng-controller='mainController'>
 
-    <table class="table">
+    <table class="table" ng-cloak>
       <tr>
         <th></th>
         <th>One-Time</th>
@@ -21,10 +21,9 @@
 
       <tr ng-repeat="item in revenueItem">
         <td class="col-sm-3">{{item.name}}</td>
-        <td class="col-sm-6">{{item.oneTime | currency}}</td>
-        <td class="col-sm-6">{{item.monthly | currency}}</td>
-        <td> <addbuttonsbutton></addbuttonsbutton>
-           <div id="space-for-buttons"></div></td>
+        <td class="col-sm-3">{{item.oneTime | currency}}</td>
+        <td class="col-sm-3">{{item.monthly | currency}}</td>
+        <td class="col-sm-3"><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(company.name)"/></td>
       </tr>
     </table>
 
@@ -32,8 +31,8 @@
     	<div class="form-group">
     		<!-- <label class="col-md-2 control-label">One-Time</label> -->
     		<div class="col-md-4 col-sm-offset-4">
-    			<input type="text" class="form-control" name="oneTime"ng-model="oneTime" placeholder="One-Time"/>
-          <input type="text" class="form-control" name="monthly" ng-model="monthly" placeholder="Monthly"/>
+    			<input type="number" class="form-control" name="oneTime"ng-model="oneTime" placeholder="One-Time"/>
+          <input type="number" class="form-control" name="monthly" ng-model="monthly" placeholder="Monthly"/>
           <input type="submit" value="Add Revenue Item" class="btn btn-primary"/>
 
     		</div>
