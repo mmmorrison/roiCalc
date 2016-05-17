@@ -15,39 +15,47 @@
         <th>Monthly</th>
       </tr>
 
-      <tr ng-repeat='item in revenueItem'>
-        <!-- <td>{{item.name}} {{item.index}}</td> -->
-      </tr>
-
       <tr ng-repeat="item in revenueItem">
         <td class="col-sm-3">{{item.name}}</td>
         <td class="col-sm-3">{{item.oneTime | currency}}</td>
         <td class="col-sm-3">{{item.monthly | currency}}</td>
-        <td class="col-sm-3"><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(company.name)"/></td>
+        <td class="col-sm-3"><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(item.name)"/></td>
       </tr>
     </table>
 
     <form class="form-horizontal" role="form" ng-submit="addRow()">
     	<div class="form-group">
-    		<!-- <label class="col-md-2 control-label">One-Time</label> -->
     		<div class="col-md-4 col-sm-offset-4">
     			<input type="number" class="form-control" name="oneTime"ng-model="oneTime" placeholder="One-Time"/>
           <input type="number" class="form-control" name="monthly" ng-model="monthly" placeholder="Monthly"/>
           <input type="submit" value="Add Revenue Item" class="btn btn-primary"/>
-
     		</div>
     	</div>
-    	<!-- <div class="form-group">
-    		<label class="col-md-2 control-label">Monthly</label>
-    		<div class="col-md-4">
-    			<input type="text" class="form-control" name="monthly" ng-model="monthly"/>
-    		</div>
-    	</div> -->
-    	<!-- <div class="form-group">
-    		<div style="padding-left:110px">
-    			<input type="submit" value="Submit" class="btn btn-primary"/>
-    		</div>
-    	</div> -->
+    </form>
+
+    <table class="table" ng-cloak>
+      <tr>
+        <th></th>
+        <th>One-Time</th>
+        <th>Monthly</th>
+      </tr>
+
+      <tr ng-repeat="expense in expenseItem">
+        <td class="col-sm-3">{{expense.name}}</td>
+        <td class="col-sm-3">{{expense.oneTime | currency}}</td>
+        <td class="col-sm-3">{{expense.monthly | currency}}</td>
+        <td class="col-sm-3"><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(expense.name)"/></td>
+      </tr>
+    </table>
+
+    <form class="form-horizontal" role="form" ng-submit="ExpenseAddRow()">
+      <div class="form-group">
+        <div class="col-md-4 col-sm-offset-4">
+          <input type="number" class="form-control" name="ExpenseOneTime" ng-model="ExpenseOneTime" placeholder="One-Time"/>
+          <input type="number" class="form-control" name="ExpenseMonthly" ng-model="ExpenseMonthly" placeholder="Monthly"/>
+          <input type="submit" value="Add Expense Item" class="btn btn-primary"/>
+        </div>
+      </div>
     </form>
 
 

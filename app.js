@@ -3,6 +3,7 @@ var app = angular.module("myApp", []);
 app.controller('mainController', function($scope){
 
   $scope.revenueItem = [{ 'name':'Item 1', 'oneTime': 100, 'monthly': 50}, {'name':'Item 2', 'oneTime': 50, 'monthly': 25}];
+  $scope.expenseItem = [{ 'name':'Expense 1', 'oneTime': 100, 'monthly': 50}, {'name':'Expense 2', 'oneTime': 50, 'monthly': 25}];
 
   $scope.itemNumber = function() {
     var count = 1;
@@ -13,11 +14,27 @@ app.controller('mainController', function($scope){
     console.log(count);
     }
 
+  $scope.ExpenseNumber = function() {
+    var count = 1;
+    for (var i = 0; i < $scope.expenseItem.length; i++) {
+      count++
+    }
+    return "Expense " + count
+    console.log(count);
+    }
+
 
   $scope.addRow = function(){
   	$scope.revenueItem.push({ 'name': $scope.itemNumber(), 'oneTime': $scope.oneTime, 'monthly':$scope.monthly });
   	$scope.name='';
   	$scope.oneTime='';
+  	$scope.monthly='';
+  };
+
+  $scope.ExpenseAddRow = function(){
+  	$scope.expenseItem.push({ 'name': $scope.ExpenseNumber(), 'oneTime': $scope.ExpenseOneTime, 'monthly':$scope.ExpenseMonthly });
+  	$scope.name='';
+  	$scope.ExpenseOneTime='';
   	$scope.monthly='';
   };
 
