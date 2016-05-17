@@ -1,13 +1,9 @@
 .form-control {
     min-width: 0;
-    width: 95px !important;
+    width: 100px !important;
     display: inline-block;
 }
-/*.oneTime{
-  position: absolute;
-  left: 75px;
+.btn{
+  background: linear-gradient(to right, #F15E21 , #F47B20);
+  border: #F15E21;
 }
-.monthly{
-  position: absolute;
-  left: 450px;
-}*/

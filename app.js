@@ -15,7 +15,6 @@ app.controller('mainController', function($scope){
 
 
   $scope.addRow = function(){
-    $scope.itemNumber();
   	$scope.revenueItem.push({ 'name': $scope.itemNumber(), 'oneTime': $scope.oneTime, 'monthly':$scope.monthly });
   	$scope.name='';
   	$scope.oneTime='';
