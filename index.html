@@ -44,7 +44,7 @@
         <td class="col-sm-3">{{expense.name}}</td>
         <td class="col-sm-3">{{expense.oneTime | currency}}</td>
         <td class="col-sm-3">{{expense.monthly | currency}}</td>
-        <td class="col-sm-3"><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(expense.name)"/></td>
+        <td class="col-sm-3"><input type="button" value="Remove" class="btn btn-primary" ng-click="removeExpenseRow(expense.name)"/></td>
       </tr>
     </table>
 

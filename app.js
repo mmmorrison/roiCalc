@@ -11,7 +11,6 @@ app.controller('mainController', function($scope){
       count++
     }
     return "Item " + count
-    console.log(count);
     }
 
   $scope.ExpenseNumber = function() {
@@ -20,22 +19,21 @@ app.controller('mainController', function($scope){
       count++
     }
     return "Expense " + count
-    console.log(count);
     }
 
 
   $scope.addRow = function(){
   	$scope.revenueItem.push({ 'name': $scope.itemNumber(), 'oneTime': $scope.oneTime, 'monthly':$scope.monthly });
-  	$scope.name='';
-  	$scope.oneTime='';
-  	$scope.monthly='';
+  	$scope.ExpenseName ='';
+  	$scope.oneTime ='';
+  	$scope.monthly ='';
   };
 
   $scope.ExpenseAddRow = function(){
   	$scope.expenseItem.push({ 'name': $scope.ExpenseNumber(), 'oneTime': $scope.ExpenseOneTime, 'monthly':$scope.ExpenseMonthly });
-  	$scope.name='';
-  	$scope.ExpenseOneTime='';
-  	$scope.monthly='';
+  	$scope.ExpenseName ='';
+  	$scope.ExpenseOneTime ='';
+  	$scope.ExpenseMonthly ='';
   };
 
 
@@ -49,6 +47,18 @@ app.controller('mainController', function($scope){
 			}
 		}
 		$scope.revenueItem.splice( index, 1 );
+	};
+
+  $scope.removeExpenseRow = function(name){
+		var index = -1;
+		var expArray = eval( $scope.expenseItem );
+		for( var i = 0; i < expArray.length; i++ ) {
+			if( expArray[i].name === name ) {
+				index = i;
+				break;
+			}
+		}
+		$scope.expenseItem.splice( index, 1 );
 	};
 
 
