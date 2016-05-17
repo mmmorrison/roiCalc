@@ -21,8 +21,8 @@
 
       <tr ng-repeat="item in revenueItem">
         <td class="col-sm-3">{{item.name}}</td>
-        <td class="col-sm-6">{{item.oneTime}}</td>
-        <td class="col-sm-6">{{item.monthly}}</td>
+        <td class="col-sm-6">{{item.oneTime | currency}}</td>
+        <td class="col-sm-6">{{item.monthly | currency}}</td>
         <td> <addbuttonsbutton></addbuttonsbutton>
            <div id="space-for-buttons"></div></td>
       </tr>
@@ -30,24 +30,25 @@
 
     <form class="form-horizontal" role="form" ng-submit="addRow()">
     	<div class="form-group">
-    		<label class="col-md-2 control-label">One-Time</label>
-    		<div class="col-md-4">
-    			<input type="text" class="form-control" name="oneTime"
-    				ng-model="oneTime" />
+    		<!-- <label class="col-md-2 control-label">One-Time</label> -->
+    		<div class="col-md-4 col-sm-offset-4">
+    			<input type="text" class="form-control" name="oneTime"ng-model="oneTime" placeholder="One-Time"/>
+          <input type="text" class="form-control" name="monthly" ng-model="monthly" placeholder="Monthly"/>
+          <input type="submit" value="Add Revenue Item" class="btn btn-primary"/>
+
     		</div>
     	</div>
-    	<div class="form-group">
+    	<!-- <div class="form-group">
     		<label class="col-md-2 control-label">Monthly</label>
     		<div class="col-md-4">
-    			<input type="text" class="form-control" name="monthly"
-    				ng-model="monthly" />
+    			<input type="text" class="form-control" name="monthly" ng-model="monthly"/>
     		</div>
-    	</div>
-    	<div class="form-group">
+    	</div> -->
+    	<!-- <div class="form-group">
     		<div style="padding-left:110px">
     			<input type="submit" value="Submit" class="btn btn-primary"/>
     		</div>
-    	</div>
+    	</div> -->
     </form>
 
 
