@@ -82,8 +82,7 @@ app.controller('mainController', function($scope){
 
   $scope.totalRevenue = function() {
     var total = 0;
-    total = $scope.oneTimeTotal() + ($scope.monthlyTotal()*12);
-    return total
+    return total = $scope.oneTimeTotal() + ($scope.monthlyTotal()*12);
   }
 
   $scope.expenseOneTime = function() {
@@ -101,6 +100,23 @@ app.controller('mainController', function($scope){
     }
     return total
   };
+
+  $scope.totalExpenses = function() {
+    var total = 0;
+    return total = $scope.expenseOneTime() + ($scope.expenseMonthly() * 12);
+  };
+
+  $scope.monthlyContributionProfit = function() {
+    var total = 0;
+    return total += $scope.monthlyTotal() - $scope.expenseMonthly();
+  }
+  $scope.totalContributionProfit = function() {
+    var total = 0;
+    return total += $scope.totalRevenue() - $scope.totalExpenses();
+  }
+
+
+  // Total Contribution Profit = Total Revenue – Total Expenses
 
 
 

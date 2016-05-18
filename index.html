@@ -73,7 +73,7 @@
         <td class="col-sm-3">Revenue</td>
         <td class="col-sm-3">{{oneTimeTotal() | currency}}</td>
         <td class="col-sm-3">{{monthlyTotal() | currency}}</td>
-        <td>{{totalRevenue() | currency}}</td>
+        <td class="col-sm-3">{{totalRevenue() | currency}}</td>
         <td></td>
       </tr>
 
@@ -81,12 +81,14 @@
         <td class="col-sm-3">Expense</td>
         <td class="col-sm-3">{{expenseOneTime() | currency}}</td>
         <td class="col-sm-3">{{expenseMonthly() | currency}}</td>
-        <td></td>
+        <td class="col-sm-3">{{totalExpenses() | currency}}</td>
       </tr>
 
       <tr>
         <td></td>
         <td><strong>Contribution Profit</strong></td>
+        <td>{{monthlyContributionProfit() | currency}}</td>
+        <td>{{totalContributionProfit() | currency}}</td>
       </tr>
     </table>
 
