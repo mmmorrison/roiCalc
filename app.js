@@ -127,16 +127,4 @@ app.controller('mainController', function($scope){
     total += ($scope.expenseOneTime() - $scope.oneTimeTotal()) / $scope.monthlyContributionProfit();
     return total.toFixed(1)
   };
-
-
-
-
-
-  // Capital ROI (Months) = (One-Time Expenses – One-Time Revenue) / Monthly Contribution Profit
-
-
-
-
-
-
 })
