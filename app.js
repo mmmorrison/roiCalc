@@ -110,13 +110,19 @@ app.controller('mainController', function($scope){
     var total = 0;
     return total += $scope.monthlyTotal() - $scope.expenseMonthly();
   }
+
   $scope.totalContributionProfit = function() {
     var total = 0;
     return total += $scope.totalRevenue() - $scope.totalExpenses();
-  }
+  };
 
+  $scope.contributionMargin = function() {
+    var total = 0;
+    total += ($scope.totalContributionProfit() / $scope.totalRevenue()) * 100
+    return total.toFixed(0) + '%';
 
-  // Total Contribution Profit = Total Revenue – Total Expenses
+  };
+
 
 
 
