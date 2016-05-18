@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body ng-controller='mainController'>
+  <body ng-controller='mainController' ng-cloak>
 
-    <table class="table" ng-cloak>
+    <table class="table">
       <tr>
         <th></th>
         <th>One-Time</th>
@@ -34,7 +34,7 @@
     	</div>
     </form>
 
-    <table class="table" ng-cloak>
+    <table class="table">
       <tr>
         <th></th>
         <th>One-Time</th>
@@ -59,6 +59,30 @@
         </div>
       </div>
     </form>
+
+    <table class="table">
+
+      <tr>
+        <th></th>
+        <th>One-Time</th>
+        <th>Monthly</th>
+        <th>Total</th>
+      </tr>
+
+      <tr>
+        <td class="col-sm-3">Revenue</td>
+        <td class="col-sm-3">{{revenueTotal()}}</td>
+        <td class="col-sm-3">{{expense.monthly | currency}}</td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td class="col-sm-3">Expense</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
 
 
 

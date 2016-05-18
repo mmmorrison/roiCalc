@@ -5,6 +5,10 @@ app.controller('mainController', function($scope){
   $scope.revenueItem = [{ 'name':'Item 1', 'oneTime': 100, 'monthly': 50}, {'name':'Item 2', 'oneTime': 50, 'monthly': 25}];
   $scope.expenseItem = [{ 'name':'Expense 1', 'oneTime': 100, 'monthly': 50}, {'name':'Expense 2', 'oneTime': 50, 'monthly': 25}];
 
+  $scope.test = function() {
+    console.log($scope.revenueItem);
+  }
+
   $scope.itemNumber = function() {
     var count = 1;
     for (var i = 0; i < $scope.revenueItem.length; i++) {
@@ -23,7 +27,7 @@ app.controller('mainController', function($scope){
 
 
   $scope.addRow = function(){
-  	$scope.revenueItem.push({ 'name': $scope.itemNumber(), 'oneTime': $scope.oneTime, 'monthly':$scope.monthly });
+  	$scope.revenueItem.push({'name': $scope.itemNumber(), 'oneTime': $scope.oneTime, 'monthly':$scope.monthly });
   	$scope.ExpenseName ='';
   	$scope.oneTime ='';
   	$scope.monthly ='';
@@ -60,6 +64,13 @@ app.controller('mainController', function($scope){
 		}
 		$scope.expenseItem.splice( index, 1 );
 	};
+
+  $scope.revenueTotal = function() {
+    return 'wired up'
+
+  }
+
+
 
 
 })
