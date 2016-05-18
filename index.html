@@ -73,6 +73,7 @@
         <td class="col-sm-3">Revenue</td>
         <td class="col-sm-3">{{oneTimeTotal() | currency}}</td>
         <td class="col-sm-3">{{monthlyTotal() | currency}}</td>
+        <td>{{totalRevenue() | currency}}</td>
         <td></td>
       </tr>
 
@@ -81,6 +82,11 @@
         <td class="col-sm-3">{{expenseOneTime() | currency}}</td>
         <td class="col-sm-3">{{expenseMonthly() | currency}}</td>
         <td></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td><strong>Contribution Profit</strong></td>
       </tr>
     </table>
 

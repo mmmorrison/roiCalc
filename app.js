@@ -80,6 +80,12 @@ app.controller('mainController', function($scope){
     return total
   };
 
+  $scope.totalRevenue = function() {
+    var total = 0;
+    total = $scope.oneTimeTotal() + ($scope.monthlyTotal()*12);
+    return total
+  }
+
   $scope.expenseOneTime = function() {
     var total = 0;
     for (var i = 0; i < $scope.expenseItem.length; i++) {
