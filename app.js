@@ -124,8 +124,8 @@ app.controller('mainController', function($scope){
 
   $scope.capitalROI = function() {
     var total = 0;
-    
-
+    total += ($scope.expenseOneTime() - $scope.oneTimeTotal()) / $scope.monthlyContributionProfit();
+    return total.toFixed(1)
   };
 
 
