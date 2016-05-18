@@ -71,15 +71,15 @@
 
       <tr>
         <td class="col-sm-3">Revenue</td>
-        <td class="col-sm-3">{{revenueTotal()}}</td>
-        <td class="col-sm-3">{{expense.monthly | currency}}</td>
+        <td class="col-sm-3">{{oneTimeTotal() | currency}}</td>
+        <td class="col-sm-3">{{monthlyTotal() | currency}}</td>
         <td></td>
       </tr>
 
       <tr>
         <td class="col-sm-3">Expense</td>
-        <td></td>
-        <td></td>
+        <td class="col-sm-3">{{expenseOneTime() | currency}}</td>
+        <td class="col-sm-3">{{expenseMonthly() | currency}}</td>
         <td></td>
       </tr>
     </table>
